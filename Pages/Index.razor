@@ -1,0 +1,40 @@
+@page "/"
+
+<h1>Calculadora</h1>
+<h2>Suma, Multiplicar y Resta</h2>
+
+<meta charset="utf-8">
+
+<p>Primer Numero</p>
+<input type="number" @bind="primernumero" />
+<br />
+<br />
+<p>Segundo Numero</p>
+<input type="number" @bind="segundonumero" />
+<br />
+<br />
+
+<button class="btn btn-primary" @onclick="Calcular">Calcular</button>
+
+<br />
+<br />
+
+<p>La suma es: @suma</p>
+<p>La resta es: @resta</p>
+<p>La multiplicacion es: @multiplicacion</p>
+
+@code{
+    private int primernumero { get; set; }
+    private int segundonumero { get; set; }
+    private int suma;
+    private int resta;
+    private int multiplicacion;
+
+    private void Calcular()
+    {
+        suma = primernumero + segundonumero;
+        resta = primernumero - segundonumero;
+        multiplicacion = primernumero * segundonumero;
+    }
+}
+
